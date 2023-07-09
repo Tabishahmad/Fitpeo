@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.bookapi.presentation.list.BookListFragment"
+        android:name="com.example.fitpeo.presentation.list.AlbumListFragment"
         android:label="@string/listFragment_label">
         <action
             android:id="@+id/action_list_to_detail"
@@ -16,10 +16,10 @@
     </fragment>
     <fragment
         android:id="@+id/bookDetailFragment"
-        android:name="com.example.bookapi.presentation.detail.BookDetailFragment"
+        android:name="com.example.fitpeo.presentation.detail.AlbumDetailFragment"
         android:label="@string/book_detail_fragment_label" />
     <fragment
         android:id="@+id/favBookFragment"
-        android:name="com.example.bookapi.presentation.favourite.FavouriteBooksFragment"
+        android:name="com.example.fitpeo.presentation.favourite.FavouriteAlbumFragment"
         android:label="@string/favourite_fragment_label" />
 </navigation>

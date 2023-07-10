@@ -28,16 +28,16 @@ class AlbumListFragment : BaseFragment<AlbumListViewModel,FragmentBookListBindin
         viewModel.fetchList()
     }
     private fun hideProgressBar(){
-        binding.progressBar.hide()
+        binding.albumprogressBar.hide()
     }
     private fun showProgressBar(){
-        binding.progressBar.show()
+        binding.albumprogressBar.show()
     }
     private fun setupRecyclersView(list:List<Album>){
         hideProgressBar()
-        binding.rv.layoutManager = GridLayoutManager(requireContext(), 3)
-        binding.rv.setData(list)
-        binding.rv.setItemClickListener(this)
+        binding.albumrv.layoutManager = GridLayoutManager(requireContext(), 3)
+        binding.albumrv.setData(list)
+        binding.albumrv.setItemClickListener(this)
     }
 
     override fun onItemClick(view: View, any: Any, index: Int) {

@@ -16,7 +16,7 @@ class AlbumDetailFragment : BaseFragment<AlbumListViewModel, FragmentBookDetailB
     override val viewModel: AlbumListViewModel by viewModels()
     lateinit var album: Album
 
-    override fun init() {
+    override fun initWithBinding() {
         try {
             album = requireNotNull(arguments?.getParcelable(ALBUM_OBJ)) { "Missing album object argument" }
             binding.album = album

@@ -22,6 +22,7 @@ abstract class BaseFragment<vModel : BaseViewModel, viewDataBinding : ViewDataBi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        init()
     }
 
     override fun onCreateView(
@@ -31,12 +32,13 @@ abstract class BaseFragment<vModel : BaseViewModel, viewDataBinding : ViewDataBi
     ): View? {
         binding = DataBindingUtil.inflate(
             inflater, layoutId, container, false);
-        init()
         binding.setVariable(BR.viewModel,viewModel)
+        initWithBinding()
         observeViewModel()
         return binding.root
     }
     open fun init(){}
+    open fun initWithBinding(){}
     open fun observeViewModel(){}
     protected fun performCoroutineTask(block: suspend  () -> Unit) {
         viewLifecycleOwner.lifecycleScope.launch() {

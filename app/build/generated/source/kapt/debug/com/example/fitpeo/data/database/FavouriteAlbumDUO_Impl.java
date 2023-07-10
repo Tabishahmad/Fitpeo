@@ -77,8 +77,7 @@ public final class FavouriteAlbumDUO_Impl implements FavouriteAlbumDUO {
   }
 
   @Override
-  public Object markFavouriteAlbum(final Album album,
-      final Continuation<? super Unit> continuation) {
+  public Object markFavouriteAlbum(final Album album, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -91,12 +90,11 @@ public final class FavouriteAlbumDUO_Impl implements FavouriteAlbumDUO {
           __db.endTransaction();
         }
       }
-    }, continuation);
+    }, arg1);
   }
 
   @Override
-  public Object removeAlbumFromFavorites(final Album album,
-      final Continuation<? super Unit> continuation) {
+  public Object removeAlbumFromFavorites(final Album album, final Continuation<? super Unit> arg1) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
@@ -109,11 +107,11 @@ public final class FavouriteAlbumDUO_Impl implements FavouriteAlbumDUO {
           __db.endTransaction();
         }
       }
-    }, continuation);
+    }, arg1);
   }
 
   @Override
-  public Object getAllFavoriteAlbums(final Continuation<? super List<Album>> continuation) {
+  public Object getAllFavoriteAlbums(final Continuation<? super List<Album>> arg0) {
     final String _sql = "SELECT * FROM favourite_book_table";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
@@ -166,11 +164,11 @@ public final class FavouriteAlbumDUO_Impl implements FavouriteAlbumDUO {
           _statement.release();
         }
       }
-    }, continuation);
+    }, arg0);
   }
 
   @Override
-  public Object getAlbum(final int albumId, final Continuation<? super Album> continuation) {
+  public Object getAlbum(final int albumId, final Continuation<? super Album> arg1) {
     final String _sql = "SELECT * FROM favourite_book_table WHERE id = ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
@@ -225,7 +223,7 @@ public final class FavouriteAlbumDUO_Impl implements FavouriteAlbumDUO {
           _statement.release();
         }
       }
-    }, continuation);
+    }, arg1);
   }
 
   public static List<Class<?>> getRequiredConverters() {

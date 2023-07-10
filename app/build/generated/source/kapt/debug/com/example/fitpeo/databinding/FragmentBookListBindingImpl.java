@@ -14,8 +14,8 @@ public class FragmentBookListBindingImpl extends FragmentBookListBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.rv, 1);
-        sViewsWithIds.put(R.id.progressBar, 2);
+        sViewsWithIds.put(R.id.albumrv, 1);
+        sViewsWithIds.put(R.id.albumprogressBar, 2);
         sViewsWithIds.put(R.id.textview, 3);
     }
     // views
@@ -29,9 +29,9 @@ public class FragmentBookListBindingImpl extends FragmentBookListBinding  {
     }
     private FragmentBookListBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.RelativeLayout) bindings[0]
             , (android.widget.ProgressBar) bindings[2]
             , (com.example.fitpeo.presentation.list.ImageRecyclerview) bindings[1]
+            , (android.widget.RelativeLayout) bindings[0]
             , (android.widget.TextView) bindings[3]
             );
         this.fragmentMovieList.setTag(null);
